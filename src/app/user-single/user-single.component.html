@@ -1,15 +1,9 @@
-<div class="container" *ngFor="let user of userUno">
-    <p>{{user.id}}</p>
-    <p>{{user.name}}</p>
-    <p>{{user.surname}}</p>
-    <p>{{user.age}}</p>
-    <p>{{user.dateOfBirth}}</p>
-    <p>Address:</p>
-    <p>{{user.address.city}}</p>
-    <p>{{user.address.street}}</p>
-    <p>{{user.address.postalCode}}</p>
-    <p>{{user.role}}</p>
-    <p>{{user.username}}</p>
-    <p>{{user.profilePhotoUrl}}</p>
-    <p>{{user.gender}}</p>
+<div class="container" *ngFor="let user of userUno; let i = index">
+    <div class="card">
+        <p>{{i}}</p>
+        <img src="{{user.profilePhotoUrl}}">
+        <p>{{user.age}}</p>
+        <p>{{user.address.city}}</p>
+        <button (click)="delete(user.id)">Delete</button>
+    </div>
 </div>

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import {User} from '../models/IUser'
+import {User} from '../models/IUser';
 @Component({
   selector: 'app-user-single',
   templateUrl: './user-single.component.html',
@@ -7,10 +7,15 @@ import {User} from '../models/IUser'
 })
 export class UserSingleComponent implements OnInit {
 @Input() userUno: User[] = [];
-
   constructor() { }
 
   ngOnInit(): void {
+  }
+  delete(n:number){
+    this.userUno = this.userUno.filter(function( obj ) {
+      return obj.id !== n;
+  });
+
   }
 
 }
